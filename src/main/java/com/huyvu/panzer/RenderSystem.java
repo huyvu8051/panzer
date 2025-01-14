@@ -12,6 +12,7 @@ public class RenderSystem extends JPanel {
         setBackground(Color.BLACK);
         addKeyListener(kcl);
         setFocusable(true);
+
     }
 
     @Override
