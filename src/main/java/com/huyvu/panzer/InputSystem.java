@@ -1,7 +1,7 @@
 package com.huyvu.panzer;
 
 public class InputSystem {
-    public void update(Entity player) {
+   /* public void update(Entity player) {
         int speed = 5;
         if (player.input.moveUp) {
             player.velocity.vy = -speed;
@@ -18,5 +18,5 @@ public class InputSystem {
         } else {
             player.velocity.vx = 0;
         }
-    }
+    }*/
 }

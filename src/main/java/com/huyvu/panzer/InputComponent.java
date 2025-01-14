@@ -1,6 +1,7 @@
 package com.huyvu.panzer;
 
-// InputComponent: Chứa thông tin về đầu vào
-class InputComponent {
+import com.artemis.Component;
+
+class InputComponent extends Component {
     boolean moveUp, moveDown, moveLeft, moveRight;
 }

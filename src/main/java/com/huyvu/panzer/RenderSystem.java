@@ -1,24 +1,25 @@
 package com.huyvu.panzer;
 
+import com.artemis.BaseSystem;
+import com.artemis.ComponentMapper;
+import com.artemis.annotations.All;
+import com.artemis.annotations.Wire;
+import com.artemis.systems.IteratingSystem;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class RenderSystem extends JPanel {
-    private final Entity entity;
+@All(PositionComponent.class)
+public class RenderSystem extends IteratingSystem {
+    protected ComponentMapper<PositionComponent> positionMapper;
 
-    public RenderSystem(KeyControlListener kcl, Entity entity) {
-        this.entity = entity;
-        setPreferredSize(new Dimension(800, 600));
-        setBackground(Color.BLACK);
-        addKeyListener(kcl);
-        setFocusable(true);
-
-    }
+    /*@Wire
+    public MainFrame mainFrame;
+*/
 
     @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.setColor(Color.RED);
-        g.fillRect((int) entity.position.x, (int) entity.position.y, 50, 50);
+    protected void process(int i) {
+        var pos = positionMapper.get(i);
+        System.out.println(pos);
     }
 }

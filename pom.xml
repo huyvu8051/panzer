@@ -21,7 +21,27 @@
             <version>2.3.0</version>
         </dependency>
 
+        <!-- LibGDX core module -->
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx</artifactId>
+            <version>1.11.0</version>
+        </dependency>
 
+        <!-- LibGDX desktop backend (LWJGL3) -->
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-backend-lwjgl3</artifactId>
+            <version>1.11.0</version>
+        </dependency>
+
+        <!-- LibGDX platform-specific natives -->
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-platform</artifactId>
+            <version>1.11.0</version>
+            <classifier>natives-desktop</classifier>
+        </dependency>
     </dependencies>
 
 </project>

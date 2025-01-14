@@ -1,9 +1,19 @@
 package com.huyvu.panzer;
 
-public class MovementSystem {
-    public void update(Entity player, float deltaTime) {
-        // Cập nhật vị trí dựa trên vận tốc và thời gian delta
-        player.position.x += player.velocity.vx * deltaTime;
-        player.position.y += player.velocity.vy * deltaTime;
+import com.artemis.ComponentMapper;
+import com.artemis.annotations.All;
+import com.artemis.systems.IteratingSystem;
+
+@All(PositionComponent.class)
+public class MovementSystem extends IteratingSystem {
+    protected ComponentMapper<PositionComponent> positionMapper;
+    protected ComponentMapper<VelocityComponent> velocityMapper;
+
+    @Override
+    protected void process(int i) {
+        var position = positionMapper.get(i);
+        var velocity = velocityMapper.get(i);
+        position.x += velocity.vx;
+        position.y += velocity.vy;
     }
 }
